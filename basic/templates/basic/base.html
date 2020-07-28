@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuriosityRadar</title>
+    <link rel="stylesheet" href="{% static 'basic/base.css' %}">
+    <link rel="stylesheet" href="{% static 'basic/home.css'%}">
+    <link rel="stylesheet" href="{% static 'basic/bootstrap.css'%}">
+    <link rel="stylesheet" href="{%static 'basic/content.css'%}">
+
+</head>
+<body style="background-color:rgba(0,0,0,0.8);">
+    {% block menu %}
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      
+      <div id="main">
+        <h2 style="font-family: sans-serif; font-size:40; color:whitesmoke; ">CuriosityRadar</h2>
+        <button class="openbtn" onclick="openNav()">☰ MENU</button>  
+        
+      </div>
+      
+      <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+      {% endblock %}
+      {% block content %}{% endblock %}
+</body>
+</html>

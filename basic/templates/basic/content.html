@@ -1,0 +1,110 @@
+{% extends 'basic/base.html'%}
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'basic/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'basic/content.css'%}">
+
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="heading">
+        <h1>{{article.question}}</h1>
+        <h6>{{article.published}}</h6>
+    </div>
+    <div class="container-content">
+        <h3 style="margin-left: 9px; color:white">AT A GLANCE</h3>
+        <div class = 'summary'>{% autoescape off%}{{ article.summary }}{% endautoescape %}</div>
+        <br>
+        
+        <h2 style="margin-left: 9px; color:white">READ ON...</h2>
+        <div class="main_content">
+            <div class="content-block">
+                <p>The smartphone in your hands is nothing less than socery to someone from 20th century. For us? It is still magic. But if we dig back
+                into the history of cellular networks, it is clear that what we take for granted now is series of consistent and evolutionary innovations.
+                Go through this article to get an idea of the evolution of cellular networks.
+                </p>
+            </div>  
+            <h4>Inception - 1G</h4>
+            <div class="content-block">
+                <img src="{% static 'basic/images/evolution-of-cellular-networks/1g-mobile.jpg'%}" alt="" style="height: 50%;">
+                <div class="img-description">The first generation mobile</div>
+                <p>The Japanese pioneered the era of cellular networks in 1979. The name “cellular” came into use because the coverage area was divided into hexagonal cells with a tower in each cell.</p>
+                <img src="{% static 'basic/images/evolution-of-cellular-networks/hexagonal-cells.png'%}" alt="" class="img-med">
+                <p>The 1G networks used only analog transmission. Networks were used to transfer “data”. Data is of many types – audio, text files, images, or videos. Among these the only audio could be encoded onto high frequency waves as sound itself is a form of waves.</p>
+                <p>This encoding was achieved in two ways:</p>
+                <p>Amplitude modulation and frequency modulation.</p>
+                <p>In amplitude modulation, the amplitude of the carrier wave is varied in proportion to that of the message signal being transmitted. </p>
+                <img src="{% static 'basic/images/evolution-of-cellular-networks/amplitude-modulation.png'%}" alt="" class="img-med">
+                <p>In frequency modulation, the instantaneous frequency of carrier wave is varied in proportion to the amplitude of the message signal</p>
+                <p>1G allowed only voice calls and as these are completely analog, they are easily prone to breaches. 
+                    This forced to use of dedicated bandwidths. Like, certain bands for commercial use, one for military etc. 
+                    More users simply meant more frequency bands and towers. 
+                    </p>
+            </div>
+            <h4>Digital Breakthrough - 2G</h4>
+            <div class="content-block">
+                <img src="{% static 'basic/images/evolution-of-cellular-networks/nokia-3310.jpg'%}" alt="" style="height: 50%;">
+                <div class="img-description"> 2G saw the rise of this little legendary beast Nokia-3310</div>
+                <p>Until now, analog waves are being transferred by encoding them onto high frequency carrier waves. </p>
+                <p>2G was a milestone because data was converted into binary (0s and 1s) and fed onto the carrier waves. So, boom! Now you can transfer text and images using the same old radio waves. 
+                    2G also introduced new bandwidths. It provided a maximum speed of 9.4kbps.
+                </p>
+                <p>The main advantage of digital signals over analog signals is that the 1G signals tend to be susceptible towards noise. Digital signals have only fixed peaks(1s) and troughs(0s). This also makes them immune towards the imperfections in the electronics used in transmission modules.</p>
+            </div>
+            <h4>2.5G</h4>
+            <div class="content-block">
+                <p>Among other transfer protocols introduced during 2G, general package radio switching made a significant difference. </p>
+                <p>To understand this, imagine the data you are sending as a cylindrical rod (large data – long rod). Now, the bandwidths through which this data has to be sent is a pipe. The rods have to go through these pipes. Each pipe can hold only a few rods at a time. At its full capacity, a lot of bandwidth is still wasted. </p>
+                <p>Now, break down the rods (data) into sand sized crystals. Each crystal has its information of route and the point at which it fits in the rod. You get the picture – the pipes can be used at full capacity. </p>
+                <p>This significantly increased the data speed to 56kbps. That’s why it is named 2.5G</p>
+            </div>
+            <h4>The Rise Of Smartphones - 3G</h4>
+            <div class="content-block">
+                <img src="{% static 'basic/images/evolution-of-cellular-networks/first-iphone.jpg'%}" alt="" class="img-big">
+                <div class="img-description"> The First iPhone lanuched in 2007</div>
+                <p>3G is the Introduction of new frequency bands coupled with more efficient GPRS protocols.</p>
+                <p>Then, in 2005, came high speed packet access (which we see as H+ in 3G mobiles). This is sometimes referred as 3.5G
+                    This gave high speeds upto 42Mbps.
+                </p>
+                <p>Here comes the interesting part.</p>
+                <p>In 2007 Iphone revolutionized the dumb looking touchscreen mobiles with its stunning display, smooth UI and the first ever virtual (and beautiful) QUERTY keypad.</p>
+                <p>In 2004 someone set foot in the internet and took off rapidly in 2007. Yes, as you might have guessed, it’s Mark Zuckerberg with his facebook. Social networking became the new trend </p>
+                <p>You tube became popular and so did video streaming. Iphone set fire to the smart phone industry and every company participated in the “who’s got the coolest display” race.</p>
+                <p>All this forced network providers to look for better options for high speeds. </p>
+            </div>
+            <h4>Present - 4G</h4>
+            <div class="content-block">
+                <p>A lot of people opposed 4G claiming it could be a potential cause for cancer and the death of birds. But it didn’t really matter. 4G however took off providing mind blowing speeds more than 42mbps. </p>
+                <p>New methods like OFDM (orthogonal frequency division multiplexing) were introduced. </p>
+                <p>Interference was a major problem even in 3.5G. This was ALLOWED in 4G through OFDM. This allowed squeezing more data into available bandwidths. I couldn’t put the effort in understanding it. It is just some crazy stuff. </p>
+            </div>        
+            <h4>Near Future - 5G</h4>
+            <div class="content-block">
+                <p>Although 5g has not completely entered commercial use, it is expected to provide speeds upto 1800mbps. </p>
+                <p>This introduces even high frequency bandwidths like millimeter waves and protocols like Multiple Input Multiple Output. </p>
+                <p>They can travel only shorter distances. So, the hexagonal cells shrink and many towers are needed. This decreases the load on single tower giving even higher efficiencies. 
+                    This could be a massive powerup for emerging technologies like self-driving cars and IOT. 
+                    </p>
+                <p>But the claim that cell radiation is harmful is now resonating even more with the introduction of 5G.</p>
+
+            </div>
+            <h4>So, can 5G really hurt you?</h4>
+            <div class="content-block">
+                <p>Take a look at the electromagnetic spectrum. </p>
+                <img src="{% static 'basic/images/evolution-of-cellular-networks/em-spectrum.jpg'%}" alt="" class="img-big">
+                <p>The radio waves which we use for communication are far right to the spectrum. Below visible light. Which means they have far less energy than visible light. </p>
+
+                <p>So, next time someone tells you that 5G is harmful, ask them to stand in the sun. if their get cancer (visible light is thousand times powerful than radio waves), they are right. Otherwise they are lying.</p>
+            </div>
+        </div>
+            </div>
+            <!--{% autoescape off%}{{article.content}}{% endautoescape%}-->
+            </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

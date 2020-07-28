@@ -1,0 +1,22 @@
+{% extends 'basic/base.html' %}
+{% load static%}
+<html lang="en">
+<body>
+    {% block content %}
+    <div class = 'container'>
+    <div class="card-deck">
+    {% for article in articles%}
+            <div class="card">
+                <a href="{% url 'basic:detail' article.title%}" class="card-link stretched-link article-heading"><h2>{{article.question}}</h2>
+                    <div class="description">
+                        {% autoescape off%}{{ article.description }}{% endautoescape %}
+                    </div>
+                </a>    
+            </div>   
+        
+    {%endfor%}
+    </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
