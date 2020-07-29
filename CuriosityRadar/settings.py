@@ -25,7 +25,7 @@ SECRET_KEY = '1(!0+r1z%s)j$4qi_ortfoi^eq**_gx$6f8+k9rniv52lfr)1l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['arcane-waters-12626.herokuapp.com']
 
 
 # Application definition
@@ -121,6 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
