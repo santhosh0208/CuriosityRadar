@@ -25,7 +25,7 @@ SECRET_KEY = '1(!0+r1z%s)j$4qi_ortfoi^eq**_gx$6f8+k9rniv52lfr)1l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['arcane-waters-12626.herokuapp.com']
+ALLOWED_HOSTS = ['curiosityradar.herokuapp.com']
 
 
 # Application definition
